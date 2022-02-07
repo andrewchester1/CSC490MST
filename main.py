@@ -1,3 +1,12 @@
+import timeit
+
+import numpy as np
+
+with open("graph.csv") as file_name:
+    array = np.loadtxt(file_name, delimiter=",")
+
+print(array)
+
 class Graph:
     def __init__(self):
         pass
@@ -39,12 +48,5 @@ class Graph:
         print('Minimum Spanning Tree Length is: ', length)
 
 g = Graph()
-g.read(
-    [
-        [0, 2, 6, 12],
-        [2, 0, 10, 5],
-        [6, 10, 0, 4],
-        [12, 5, 4, 0]
-    ]
-)
+g.read(array)
 g.process()
